@@ -15,7 +15,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "DingTalk": "src/DingTalk"
+            "DingTalk\\": "src/DingTalk"
         }
     }
 }
