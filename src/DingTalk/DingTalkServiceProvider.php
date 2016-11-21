@@ -20,7 +20,7 @@ class DingTalkServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__ . '/../../config/config.php' => config_path('ding-talk.php')
+            __DIR__ . '/../config/config.php' => config_path('ding-talk.php')
         ], 'config');
     }
 
@@ -31,7 +31,7 @@ class DingTalkServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__ . '/../../config/config.php', 'ding-talk');
+        $this->mergeConfigFrom(__DIR__ . '/../config/config.php', 'ding-talk');
 
         $this->app->singleton('ding-talk', function ($app) {
             $config = $app->config->get('ding-talk');
