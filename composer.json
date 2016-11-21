@@ -1,0 +1,16 @@
+{
+    "name": "zhangjy555/dingtalk",
+    "description": "DingTalk API for laravel",
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "5.*",
+        "nategood/httpful": "0.2.20"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "zhangjy555",
+            "email": "691798211@qq.com"
+        }
+    ]
+}
