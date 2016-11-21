@@ -12,5 +12,10 @@
             "name": "zhangjy555",
             "email": "691798211@qq.com"
         }
-    ]
+    ],
+    "autoload": {
+        "psr-4": {
+            "DingTalk": "src/DingTalk"
+        }
+    }
 }
