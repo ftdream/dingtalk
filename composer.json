@@ -1,5 +1,5 @@
 {
-    "name": "zhangjy555/dingtalk",
+    "name": "ftdream/dingtalk",
     "description": "DingTalk API for laravel",
     "require": {
         "php": ">=5.4.0",
@@ -9,7 +9,7 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "zhangjy555",
+            "name": "ftdream",
             "email": "691798211@qq.com"
         }
     ],
