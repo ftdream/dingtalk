@@ -10,7 +10,7 @@ class DingTalkServiceProvider extends ServiceProvider
      *
      * @var bool
      */
-    protected $defer = false;
+    protected $defer = true;
 
     /**
      * Bootstrap the application events.
@@ -38,4 +38,9 @@ class DingTalkServiceProvider extends ServiceProvider
             return new DingTalk($config);
         });
     }
+
+    public function provides()
+    {
+        return ['ding_talk'];
+    }    
 }
