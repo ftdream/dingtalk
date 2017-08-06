@@ -41,6 +41,6 @@ class DingTalkServiceProvider extends ServiceProvider
 
     public function provides()
     {
-        return ['ding_talk'];
+        return ['ding-talk'];
     }    
 }
