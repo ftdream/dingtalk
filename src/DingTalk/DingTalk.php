@@ -28,7 +28,7 @@ class DingTalk
         {
             $response = Http::get('/gettoken', array('corpid' => $this->corpid, 'corpsecret' => $this->corpsecret));
             $accessToken = $response->access_token;
-            Cache::set('corp_access_token', $accessToken);
+            Cache::put('corp_access_token', $accessToken);
         }
         return $accessToken;
     }
@@ -50,11 +50,20 @@ class DingTalk
 
         $config = array(
             'url' => $url,
-            'nonceStr' => $nonceStr,
+            'nonceStr' => self::createNonceStr(),
             'timeStamp' => $timeStamp,
             'corpId' => $this->corpid,
             'signature' => $signature);
         return json_encode($config, JSON_UNESCAPED_SLASHES);
+    }
+
+    private static function createNonceStr($length = 16) {
+        $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        $str = "";
+        for ($i = 0; $i < $length; $i++) {
+          $str .= substr($chars, mt_rand(0, strlen($chars) - 1), 1);
+        }
+        return $str;
     }
 
     public static function sign($ticket, $nonceStr, $timeStamp, $url)
@@ -70,7 +79,7 @@ class DingTalk
     private static function getCurrentUrl() 
     {
         $url = "http";
-        if ($_SERVER["HTTPS"] == "on") 
+        if (($_SERVER["HTTPS"]??'') == "on") 
         {
             $url .= "s";
         }
