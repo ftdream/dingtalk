@@ -87,15 +87,13 @@
 ```javascript
 
 http {
-        ...
 
 		lua_shared_dict buffer 1m 
 
-		...
 
         server {
-                ...
-                location /sensor {
+                
+			location /sensor {
  
                 	content_by_lua '
 
@@ -107,9 +105,6 @@ http {
 						hc:acc("api.ceshi.cc.ok", 1) 
                		';
                } 
- 
-        ...
         }
 }
 ```
-
